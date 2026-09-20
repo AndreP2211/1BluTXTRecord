@@ -1,7 +1,7 @@
 version: '3'
 services:
   1blu-ddns:
-    image: jonasvoigt/1blu-ddns:latest
+    image: 1blutxtrecord:1.0
     restart: always
     environment:
       - USERNAME=1234567
