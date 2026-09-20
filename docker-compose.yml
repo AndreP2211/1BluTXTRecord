@@ -1,0 +1,20 @@
+version: '3'
+services:
+  1blu-ddns:
+    image: jonasvoigt/1blu-ddns:latest
+    restart: always
+    environment:
+      - USERNAME=1234567
+      - PASSWORD=password
+      - DOMAIN_NUMBER=123456
+      - OTP_KEY=ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
+      - DOMAIN=example.de
+      - LOGGING=INFO
+      - CONTRACT=123123
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot-lib:/var/lib/letsencrypt
+
+volumes:
+  letsencrypt:
+  certbot-lib:
